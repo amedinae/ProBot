@@ -1,4 +1,13 @@
 {
-    "train_confirmation": "Chers membres du groupe Telegram, nous vous invitons cordialement à confirmer vos réservations de train. Votre confirmation est essentielle pour assurer un voyage en toute tranquillité.",
-    "attendance_reminder": "Que dicen los hijueputaaaaaas?, me hacen el favor y firman su horario y lo suben al moodle. En la buena chinche"
+    "train_confirmation": {
+        "default": "Confirmen sus trenes de los proximos dias, por favor. Gracias",
+        "to_paris": "Ya pueden confirmar sus trenes de este miercoles. Tengan una linda noche 🌛",
+        "to_nantes": "Recuerden confirmar sus trenes a Nantes. Qué tengan un día maravilloso 🌞"
+    },
+    "attendance_reminder": {
+        "default": "Suban su hoja de asistencia firmada al moodle, por favor. Gracias",
+        "guache": "Que dicen los hijueputaaaaaas?, me hacen el favor y firman su horario y lo suben al moodle. En la buena chinche",
+        "before_train": "Tengan un lindo viaje ❤, les recomiendo aprovechar su viaje para subir su hoja de asistencia al moodle.",
+        "on_deadline": "IMPORTANTE: Recuerden que hoy es el último día para subir su hoja de asistencia al moodle"
+    }
 }

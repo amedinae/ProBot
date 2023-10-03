@@ -63,18 +63,23 @@ functions:
     handler: handler.trainConfirmation
     events:
       - http:
-        path: users/create
-        method: get
-        # Run every monday at 20:30 UTC
-      - schedule: cron(30 20 ? * MON *)
+          path: users/create
+          method: get
+      - schedule: cron(15 16 ? * TUE,THU,FRI *)
+  trainToParisReminder:
+    handler: handler.trainToParisReminder
+    events:
+      - http:
+          path: users/create
+          method: get
+      - schedule: cron(00 18 ? * MON *)
   attendanceRemider:
     handler: handler.attendanceReminder
     events:
       - http:
-        path: users/create
-        method: get
-        # Run every tuesday and thursday at 20:30 UTC
-      - schedule: cron(30 20 ? * TUE,THU *)
+          path: users/create
+          method: get
+      - schedule: cron(00 16 ? * WED,FRI,MON *)
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

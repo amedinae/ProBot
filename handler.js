@@ -27,11 +27,30 @@ const sendMessage = (message) => {
 };
 
 module.exports.trainConfirmation = async (event) => {
-    return sendMessage(messages.trainConfirmation);
-    // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-    // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+    let eventMessages = messages.train_confirmation;
+    schedule = {
+        "Thursday": eventMessages.to_nantes,
+        "Friday": eventMessages.to_nantes
+    }
+    const day = new Date().toLocaleDateString('en', { weekday: 'long' });
+    const message = schedule[day] || eventMessages.default;
+    
+    return sendMessage(message);
 };
 
+module.exports.trainToParisReminder = async (event) => {
+    return sendMessage(messages.train_confirmation.to_paris);
+}
+
 module.exports.attendanceReminder = async (event) => {
-    return sendMessage(attendance_reminder);
+    let eventMessages = messages.attendance_reminder;
+    schedule = {
+        "Monday": eventMessages.on_deadline,
+        "Wednesday": eventMessages.before_train,
+        "Friday": eventMessages.guache
+    }
+    const day = new Date().toLocaleDateString('en', { weekday: 'long' });
+    const message = schedule[day] || eventMessages.default;
+    
+    return sendMessage(message);
 }
